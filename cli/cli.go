@@ -10,12 +10,13 @@ import (
 )
 
 type Config struct {
-	UserName string // Username to use when connecting to IRC
-	Log      bool   // True if IRC messages should be logged
-	Dir      string
-	Server   string
-	irc      *irc.Conn
-	Version  string
+	UserName  string // Username to use when connecting to IRC
+	Log       bool   // True if IRC messages should be logged
+	Dir       string
+	Server    string
+	EnableTLS bool
+	irc       *irc.Conn
+	Version   string
 }
 
 // StartInteractive instantiates the OpenBooks CLI interface

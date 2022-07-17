@@ -11,8 +11,8 @@ import (
 // Specific irc.irchighway.net commands
 
 // Join connects to the irc.irchighway.net server and joins the #ebooks channel
-func Join(irc *irc.Conn, url string) {
-	irc.Connect(url)
+func Join(irc *irc.Conn, address string, enableTLS bool) {
+	irc.Connect(address, enableTLS)
 	// Wait before joining the ebooks room
 	// Often you recieve a private message from the server
 	time.Sleep(time.Second * 2)

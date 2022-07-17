@@ -49,7 +49,7 @@ func (server *server) routeMessage(message Request, c *Client) {
 
 // handle ConnectionRequests and either connect to the server or do nothing
 func (c *Client) startIrcConnection(server *server) {
-	core.Join(c.irc, server.config.Server)
+	core.Join(c.irc, server.config.Server, server.config.EnableTLS)
 	handler := server.NewIrcEventHandler(c)
 
 	if server.config.Log {

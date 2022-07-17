@@ -25,7 +25,8 @@ func init() {
 	serverCmd.Flags().StringVarP(&serverConfig.DownloadDir, "dir", "d", filepath.Join(os.TempDir(), "openbooks"), "The directory where eBooks are saved when persist enabled.")
 	serverCmd.Flags().BoolVar(&serverConfig.Persist, "persist", false, "Persist eBooks in 'dir'. Default is to delete after sending.")
 	serverCmd.Flags().StringVar(&serverConfig.Basepath, "basepath", "/", `Base path where the application is accessible. For example "/openbooks/".`)
-	serverCmd.Flags().StringVarP(&serverConfig.Server, "server", "s", "irc.irchighway.net", "IRC server to connect to.")
+	serverCmd.Flags().StringVarP(&serverConfig.Server, "server", "s", "irc.irchighway.net:6697", "IRC server to connect to.")
+	serverCmd.Flags().BoolVar(&serverConfig.EnableTLS, "tls", true, "Connect to server using TLS.")
 	serverCmd.Flags().IntP("rate-limit", "r", 10, "The number of seconds to wait between searches to reduce strain on IRC search servers. Minimum is 10 seconds.")
 }
 
